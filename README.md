@@ -4,18 +4,21 @@ This is my vim configuration file, you can copy it as you well.
 # Installation
 1.Get local copy
 ```
-https://github.com/pengz1/config
+https://github.com/pengz1/vim.git
 ```
 
 2.Link vim config file
 ```
-ln -s vimconfig/vimrc ~/.vimrc
+ln -s vim/vimrc ~/.vimrc
 ```
 
 3.Install [Vundle](https://github.com/gmarik/Vundle.vim)
+
 ```
+mkdir .vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
+or directly copy .vim/Vundle.vim from vim/Vundle.vim.
 
 4.Install plugins
 Open Vim, and type *:PluginInstall*, wait until all plugins are installed.
@@ -24,8 +27,8 @@ Open Vim, and type *:PluginInstall*, wait until all plugins are installed.
    (Take ubuntu for example)
 - System dependancy
 ```
-sudo apt-get install silversearcher-ag  # This is what vim-ag needs
-sudo apt-get install buiuld-essential cmake pyton-dev    #This is plugin 'YCM' needs
+sudo apt-get install -y silversearcher-ag  # This is what vim-ag needs
+sudo apt-get install -y build-essential cmake python-dev    #This is plugin 'YCM' needs
 ```
 - Javscript
 ```
@@ -41,11 +44,13 @@ pip install pylint      # you need install python first
 
 6.Compile YouCompleteMe
 Follows the guide in <https://github.com/Valloric/YouCompleteMe>, this will take very long time (around 1 hour in my PC).
+If you vim version is less than  7.4.1578, follow https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source to build a new version vim.
+Note: While install vim you should only configure one of Python3.x or Python2.7, otherwise YCM will report errors.
 
 7.Install for [command-t](https://github.com/wincent/command-t)
 ```
 sudo apt-get install ruby-full
-cd ~/.vim/bundle/command-t/ruby/command-t
+cd ~/.vim/bundle/command-t/ruby/command-t/ext/command-t
 ruby extconf.rb
 make
 ```
